@@ -5,7 +5,7 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/vamshikrishna0/IEODP-Enterprise-Orchestration.git'
+                git branch: 'main',url: 'https://github.com/vamshikrishna0/IEODP-Enterprise-Orchestration.git'
             }
         }
 
