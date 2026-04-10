@@ -12,7 +12,7 @@ pipeline {
         stage('Check Docker') {
             steps {
                 sh 'docker --version'
-                sh 'docker compose version'
+                sh 'docker-compose --version'
             }
         }
 
@@ -24,7 +24,7 @@ pipeline {
 
         stage('Run Containers') {
             steps {
-                sh 'docker compose up -d'
+                sh 'docker-compose up -d'
             }
         }
 
