@@ -9,6 +9,15 @@ pipeline {
             }
         }
 
+        stage('SonarQube Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh 'sonar-scanner'
+                }
+            }
+        }
+
+
         stage('Check Docker') {
             steps {
                 sh 'docker --version'
