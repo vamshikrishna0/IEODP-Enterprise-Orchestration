@@ -5,7 +5,14 @@ pipeline {
 
         stage('Clone Repository') {
             steps {
-                git branch: main, url: 'https://github.com/vamshikrishna0/IEODP-Enterprise-Orchestration.git'
+                git branch: 'main', url: 'https://github.com/vamshikrishna0/IEODP-Enterprise-Orchestration.git'
+            }
+        }
+
+        stage('Check Docker') {
+            steps {
+                sh 'docker --version'
+                sh 'docker compose version'
             }
         }
 
